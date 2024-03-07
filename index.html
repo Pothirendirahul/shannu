@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <!--#include file="footer.html" -->
+    <div id="registration-form">
+        <div class='fieldset'>
+        <legend>EarthQuake Alert?!</legend>
+            <form id="result" action="/result" method="post" data-validate="parsley">
+                <div class='row'>
+                    <label for='latitude'>Latitude</label>
+                    <input type="text" placeholder="latitude" name='latitude' id='latitude' data-required="true" data-error-message="Latitude is required">
+                </div>
+                <div class='row'>
+                    <label for="longitude">Longitude</label>
+                    <input type="text" placeholder="longitude"  name='longitude' data-required="true"  data-error-message="Longitude is required">
+                </div>
+                <div class='row'>
+                    <label for="depth">Depth</label>
+                    <input type="text" placeholder="depth" name='depth' data-required="true" data-error-message="Depth is required">
+                </div>
+                <div class='row'>
+                    <label for="nos">No.of.stations</label>
+                    <input type="text" placeholder="nos" name='nos' data-required="true" data-error-message="No.of.stations is required">
+                </div>
+                <input type="submit" value="Predict">
+            </form>
+
+        </div>
+    </div>
+   
+</body>
+
+<script>
+    function submitResult() {
+        // Get parameter values from gauge inputs
+        document.getElementById('latitude').value = document.getElementById('latitude').value;
+        document.getElementById('longitude').value = document.getElementById('longitude').value;
+        document.getElementById('depth').value = document.getElementById('depth').value;
+        document.getElementById('nos').value = document.getElementById('nos').value;
+        
+        // Submit the form
+        document.getElementById('result').submit();
+
+        
+    }
+   
+        
+    
+</script>
+
+</html>
